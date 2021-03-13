@@ -1,12 +1,12 @@
 module.exports = function check(str, bracketsConfig) {
-    const arr = bracketsConfig.map(item => item.join(''));
+    const b = bracketsConfig.map(per => per.join(''));
     let string = str,
-        val;
+        sp;
 
     do {
-        val = string;
-        arr.forEach(item => string = string.replace(item, ''));
-    } while (string.length < val.length)
+        sp = string;
+        b.forEach(per => string = string.replace(per, ''));
+    } while (string.length < sp.length)
 
     return !string.length;
 }
